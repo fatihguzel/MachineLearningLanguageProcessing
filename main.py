@@ -31,7 +31,6 @@ for word in list3:
     else:
         wordcount[word] += 1
 sort_orders = sorted(wordcount.items(),key= lambda x: x[1],reverse=True)
-print(sort_orders)
 #kelime sayma
 
 

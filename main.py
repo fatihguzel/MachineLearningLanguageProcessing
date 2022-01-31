@@ -19,7 +19,7 @@ for cumleler in list1:
     list1[sayac] = re.sub(r'[^\w\s]','', cumleler)
     kelimeler= list1[sayac].split(" ")
     for kelime in kelimeler:
-        if kelime not in list2:        #olan varsa karışma yoksa eğer yeni listeye ekleme yap zaten aradığımız şeyler yeni listede olacak 
+        if kelime not in list2:        
             list3.append(kelime)
     sayac +=1
 

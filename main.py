@@ -3,7 +3,7 @@ from ntpath import join
 import re
 import json
 
-f = open('sorular.txt','r',encoding="utf-8")   #Dosyamızı çektik ve Türkçe karakter sorununu çözdük.
+f = open('sorular.txt','r',encoding="utf-8")   
 x = open('stopwords.txt','r',encoding="utf-8")
 sorular = f.read().lower()
 yasakliKelimeler = x.read().lower()
@@ -23,7 +23,7 @@ for cumleler in list1:
             list3.append(kelime)
     sayac +=1
 
-###Kelime Sayma
+
 wordcount={}
 for word in list3:
     if word not in wordcount:
@@ -31,13 +31,13 @@ for word in list3:
     else:
         wordcount[word] += 1
 sort_orders = sorted(wordcount.items(),key= lambda x: x[1],reverse=True)
-#kelime sayma
+
 
 
 list4 = []
-for i in sort_orders: #en çok tekrar eden kelimeleri listeye aktarma
+for i in sort_orders: 
     list4.append(f"{i[0]}")
-dictOfWords = { list4[i] : i for i in range(0, 101) }# ilk 100 kelimeyi sözlüğe çevirme
+dictOfWords = { list4[i] : i for i in range(0, 101) }
 dictOfWords["OOV"] = 101
 
 al = input("lutfen cumle girisi yapiniz: ").split(" ")
@@ -52,6 +52,6 @@ for z in al:
     else:
         vektor.append(dictOfWords["OOV"])
         arr[dictOfWords["OOV"]-1] = 1
-    print(arr) # her kelimenin liste şeklinde indisini veren belirteç
+    print(arr) 
 
 print(vektor) 
